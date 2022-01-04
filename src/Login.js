@@ -18,7 +18,7 @@ const Login =()=> {
         setError("")
         setLoading(true)
         await login(emailRef.current.value, passwordRef.current.value)
-        navigate.push("/home")
+        navigate("/Home")
       } catch {
         setError("Failed to log in")
       }
@@ -33,8 +33,8 @@ const Login =()=> {
             <p>Continue your experience with us</p>
             <p> {error} </p>
             <form onSubmit={handleSubmit} className ='login-form'>
-            <input type ='email' name ='email' placeholder ='Email'   />
-            <input type ='password' name ='password' placeholder ='Password' />
+            <input type ='email' name ='email' placeholder ='Email' ref={emailRef}   />
+            <input type ='password' name ='password' placeholder ='Password' ref={passwordRef} />
             <button  disabled={loading} >Login</button>
             <p>Don't have an account?<Link to ='/Signup'> Register</Link></p>
             <p>Forgot Password?</p>
@@ -45,7 +45,4 @@ const Login =()=> {
         </div>
     )
 }
-
-export default Login
-
-
+export default Login;
