@@ -7,7 +7,7 @@ const Signup = () => {
     const artisteNameRef = useRef()
     const emailRef = useRef()
     const passwordRef = useRef()
-    const {signup, addUser} = useAuth()
+    const {signup, addUser,currentUser} = useAuth()
     const [error, setError] = useState ('')
     const [loading, setLoading] = useState (false)
     const navigate = useNavigate()
@@ -17,9 +17,9 @@ const Signup = () => {
             setError('')
             setLoading (true)
            await  signup(  emailRef.current.value,passwordRef.current.value)
-        //    await addUser (fullNameRef.current.value, artisteNameRef.current.value)
+         await addUser (currentUser,fullNameRef.current.value, artisteNameRef.current.value)
            
-           navigate("/Home")
+           navigate("/Dashboard")
         } catch{
             setError('Failed to create an account')
         }

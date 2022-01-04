@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './Login'
 import Signup from './Signup';
-import Home from './Home';
+import Dashboard from './Dashboard';
 import Album from './Album';
 import Song from './Song';
 import Wallet from './Wallet';
@@ -17,7 +17,7 @@ const App = () => {
     <Routes>
   <Route  path='/' element ={<Login/>}/>
   <Route path='/Signup' element ={<Signup/>}/>
-  <Route path='/Home' element ={<Home/>}/>
+  <Route path='/Dashboard' element ={<Dashboard/>}/>
   <Route path='/Album' element ={<Album/>}/>
   <Route path='/Song' element ={<Song/>}/>
   <Route path='/Wallet' element ={<Wallet/>}/>

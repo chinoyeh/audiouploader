@@ -17,7 +17,7 @@ export function AuthProvider ({children}){
     
     }
     function addUser (fullName, artisteName){
-      return auth.createUserDocument(currentUser, {fullName, artisteName})
+      return auth.createUserDocument(currentUser, fullName, artisteName)
     }
     function login( email, password) {
         return auth.signInWithEmailAndPassword(email, password)
