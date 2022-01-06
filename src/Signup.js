@@ -1,7 +1,6 @@
 import React, {useRef, useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import { useAuth } from './contexts/AuthContext'
-import {auth} from './firebase'
 import './Login/Login.css'
 
 const Signup = () => {
@@ -9,7 +8,7 @@ const Signup = () => {
     const artisteNameRef = useRef()
     const emailRef = useRef()
     const passwordRef = useRef()
-    const {signup, addUser,currentUser} = useAuth()
+    const {signup} = useAuth()
     const [error, setError] = useState ('')
     const [loading, setLoading] = useState (false)
     const navigate = useNavigate()
@@ -19,10 +18,6 @@ const Signup = () => {
             setError('')
             setLoading (true)
            await  signup(  emailRef.current.value,passwordRef.current.value)
-                    auth.database().ref ('user').set({
-                        fullNameRef,  artisteNameRef
-                    })
-           
            navigate("/Dashboard")
         } catch{
             setError('Failed to create an account')

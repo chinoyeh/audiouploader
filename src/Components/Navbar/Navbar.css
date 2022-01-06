@@ -1,7 +1,7 @@
 .Navbar {
   width: 100%;
   height: 50px;
-  background-color: rgb(247, 165, 250);
+  background-color: #5c5b5b;
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -35,7 +35,7 @@
 .navlinks button {
   border-style: none;
   color: white;
-  background-color: rgb(247, 165, 250);
+  background-color: #5c5b5b;
   font-weight: bold;
   letter-spacing: 2px;
 }

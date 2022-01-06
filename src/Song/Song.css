@@ -1,0 +1,60 @@
+.uploadsong-content {
+  margin-left: 270px;
+  max-width: 600px;
+  color: white;
+}
+.uploadsong-nav ol {
+  margin-top: 50px;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  height: 30px;
+  justify-content: space-evenly;
+  align-items: center;
+  counter-reset: myOrderedListItemsCounter;
+}
+.uploadsong-nav li {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #807e7e;
+  list-style-type: none;
+}
+.navlink::before {
+  background-color: black;
+  border-radius: 50%;
+  color: white;
+}
+.uploadsong-nav ol li:before {
+  counter-increment: myOrderedListItemsCounter;
+  content: counter(myOrderedListItemsCounter) "";
+  margin-right: 0.5em;
+}
+.song-form input {
+  background-color: #5c5b5b;
+  border-style: none;
+  width: 500px;
+  height: 30px;
+}
+.song-details {
+  margin-top: 50px;
+}
+.song-cover input {
+  background-color: white;
+  width: 200px;
+  height: 200px;
+  margin: auto 100px;
+}
+.song-cover input::file-selector-button {
+  visibility: hidden;
+}
+.uploadsong-button button {
+  background-color: #807e7e;
+  color: rgb(233, 230, 230);
+  position: relative;
+  left: 500px;
+  margin-top: 20px;
+  border-style: none;
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+}

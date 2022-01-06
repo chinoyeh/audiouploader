@@ -1,11 +1,11 @@
 .Sidebar {
-  background-color: rgb(208, 33, 224);
+  background-color: #5c5b5b;
   width: 200px;
   position: fixed;
   overflow: auto;
 }
 .Profile {
-  background-color: rgb(247, 165, 250);
+  background-color: #807e7e;
   padding: 20px;
   text-align: center;
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../Components/Navbar/Navbar'
 import Sidebar from '../Components/Sidebar/Sidebar'
+import { useAuth } from '../contexts/AuthContext';
 import { XYPlot, XAxis, YAxis, LineChart } from 'reactochart';
 import './Dashboard.css'
 import 'reactochart/styles.css';
@@ -36,10 +37,10 @@ const Dashboard = () => {
                 <YAxis />
                 <LineChart
                     data={[
-                      {x: 0, y: 20},
-                      {x: 5, y: 30},
-                      {x: 10, y: 35},
-                      {x: 15, y: 30},
+                      {x: 'song 1', y: 20},
+                      {x: 'song 2', y: 30},
+                      {x: 'song 3', y: 35},
+                      {x: 'song 4', y: 30},
                     ]}
                     x={d => d.x}
                     y={d => d.y}

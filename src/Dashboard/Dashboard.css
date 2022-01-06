@@ -1,12 +1,12 @@
 .Dashboard {
   height: 100%;
-}
-.dashcontent {
-  margin-left: 210px;
   width: 100%;
 }
+.dashcontent {
+  margin-left: 270px;
+}
 .dashcontent h4 {
-  color: purple;
+  color: white;
 }
 .chart {
   display: flex;
@@ -17,7 +17,7 @@
 }
 
 .earning {
-  background-color: violet;
+  background-color: #5c5b5b;
   margin-bottom: 20px;
   width: 250px;
   height: 150px;
@@ -25,7 +25,7 @@
   color: white;
 }
 .earning h3 {
-  color: green;
+  color: rgb(2, 155, 2);
   margin: 0 auto;
 }
 .earning h6,
