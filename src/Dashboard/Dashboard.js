@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useState,useEffect} from 'react'
 import Navbar from '../Components/Navbar/Navbar'
 import Sidebar from '../Components/Sidebar/Sidebar'
 import { useAuth } from '../contexts/AuthContext';
@@ -9,7 +9,8 @@ import 'reactochart/styles.css';
 
 const Dashboard = () => {
 
-
+  
+ 
     return (
         <div className ='Dashboard'>
          <Navbar/>
@@ -60,7 +61,7 @@ const Dashboard = () => {
  
 
         <h4> Top Albums </h4>
-   
+        
            
          </div>
          </div>

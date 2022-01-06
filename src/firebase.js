@@ -1,6 +1,7 @@
 import firebase from "firebase/compat/app"
 import "firebase/compat/auth"
-
+import 'firebase/compat/database'
+import 'firebase/compat/firestore'
 const app = firebase.initializeApp({
     apiKey: "AIzaSyDX75nIBchmXZWBwgqBKOyJfZ2KE9AzVNo",
     authDomain: "glirt-music-uploader.firebaseapp.com",
@@ -11,10 +12,14 @@ const app = firebase.initializeApp({
     appId: "1:555940547949:web:0d10ea88ddba943dd15e64",
     measurementId: "G-ZCMB3D0WPY"
 })
- 
 
 export const auth = app.auth()
-// export const db = firebase.firestore();
+export const db = app.firestore()
+
+
+
+
+
  
 
 export default app
