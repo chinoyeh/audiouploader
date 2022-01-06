@@ -23,11 +23,21 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   letter-spacing: 2px;
 }
+.navlinks li {
+  padding: 10px;
+}
 
 .navlinks a {
   color: white;
-  padding: 20px;
+
   font-size: 1.2rem;
+}
+.navlinks button {
+  border-style: none;
+  color: white;
+  background-color: rgb(247, 165, 250);
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 .Logo {
   font-size: 2.5rem;

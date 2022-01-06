@@ -1,0 +1,46 @@
+.login {
+  max-width: 600px;
+  margin: auto;
+}
+.login p {
+  color: gray;
+}
+.login h1 {
+  color: rgb(208, 33, 224);
+  font-weight: 400;
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+  margin-bottom: -5px;
+}
+.login-form {
+  display: grid;
+  text-align: center;
+  margin-top: 30%;
+}
+.login-form input {
+  height: 45px;
+  margin: 5px 0;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid gray;
+  background-color: white;
+  padding: 5px;
+}
+.login-form button {
+  background-color: rgb(208, 33, 224);
+  color: white;
+  height: 45px;
+  margin: 10px 0;
+  border-style: none;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.login a {
+  text-decoration: none;
+  color: rgb(208, 33, 224);
+}
+.error {
+  color: red;
+}
