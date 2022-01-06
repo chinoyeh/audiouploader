@@ -14,6 +14,7 @@ const Sidebar = () => {
             <ul>
                 <li> <Link  to ='/Dashboard'>Dashboard</Link></li>
                 <li> <Link to ='/Wallet'> Wallet</Link></li>
+                <li> <Link to ='/Analytics'> Analytics</Link></li>
                 <li> <Link to ='/Profile'>Songs</Link></li>
                   <li><Link to ='/Settings'>Upload Song</Link> </li>
                   <li><Link to ='/Settings'>Upload Album</Link> </li>

@@ -7,6 +7,7 @@ import Album from './Album';
 import Song from './Song';
 import Wallet from './Wallet';
 import Profile from './Profile';
+import Analytics from './Analytics';
 import './App.css'
 import { AuthProvider } from './contexts/AuthContext';
 
@@ -22,6 +23,7 @@ const App = () => {
   <Route path='/Song' element ={<Song/>}/>
   <Route path='/Wallet' element ={<Wallet/>}/>
   <Route path='/Profile' element ={<Profile/>}/>
+  <Route path='/Analytics' element ={<Analytics/>}/>
 </Routes> 
 </AuthProvider>
 </Router>

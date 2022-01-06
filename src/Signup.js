@@ -1,6 +1,7 @@
 import React, {useRef, useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import { useAuth } from './contexts/AuthContext'
+import {auth} from './firebase'
 
 const Signup = () => {
     const fullNameRef = useRef()
@@ -17,7 +18,9 @@ const Signup = () => {
             setError('')
             setLoading (true)
            await  signup(  emailRef.current.value,passwordRef.current.value)
-         await addUser (currentUser,fullNameRef.current.value, artisteNameRef.current.value)
+                    auth.database().ref ('user').set({
+                        fullNameRef,  artisteNameRef
+                    })
            
            navigate("/Dashboard")
         } catch{

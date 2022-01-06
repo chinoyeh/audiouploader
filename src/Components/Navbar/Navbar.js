@@ -22,7 +22,7 @@ const Navbar = () => {
 
     return (
         <div className ="Navbar">
-           <div className ='Logo'>Logo</div>
+           <div className ='Logo'><i className ="soundcloud icon"/></div>
            <div className ='navlinks'>
            <ul>
                 <li><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdSK_-PJfARbbUnpg7CH_qgALvjn5JungXtg&usqp=CAU'/></li>

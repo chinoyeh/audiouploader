@@ -1,0 +1,20 @@
+.analytics-content {
+  margin-left: 250px;
+}
+.ratings h4,
+h3 {
+  color: white;
+}
+.ratings {
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 50px;
+  background-color: rgb(247, 165, 250);
+  width: 200px;
+  height: 100px;
+}
+.tops {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
