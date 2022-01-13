@@ -1,17 +1,14 @@
 import React ,{useState,useEffect} from 'react'
 import Navbar from '../Components/Navbar/Navbar'
 import Sidebar from '../Components/Sidebar/Sidebar'
-import { useAuth } from '../contexts/AuthContext';
+
 import { XYPlot, XAxis, YAxis, LineChart } from 'reactochart';
 import './Dashboard.css'
 import 'reactochart/styles.css';
 
-
 const Dashboard = () => {
   
-//   const {  currentUser, userData} = useAuth()
 
-// console.log(userData)
 
     return (
         <div className ='Dashboard'>
@@ -64,12 +61,7 @@ const Dashboard = () => {
 
         <h4> Top Albums </h4>
         
-        {/* <h4> {currentUser.email} </h4>
-       <h4>{currentUser.artiste} </h4>
-       <h4> {currentUser.gender} </h4>
-           <h4>{currentUser.uid}</h4> */}
-           {/* <h4>{userData}</h4> */}
-
+       
         
          </div>
          </div>

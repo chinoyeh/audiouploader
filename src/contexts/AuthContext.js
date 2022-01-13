@@ -1,20 +1,13 @@
 import React, {useContext, useState, useEffect} from 'react'
 import {auth, db} from '../firebase'
-import { updateProfile } from "firebase/auth";
-
-
-import {set, ref,onValue, child} from 'firebase/database'
-
-// import { getStorage,  getDownloadURL } from "firebase/storage";
-// import { Children } from 'react';
+import {set, ref,onValue} from 'firebase/database'
 
 const AuthContext = React.createContext()
-// var userData = ref(db, '/Users'+ userId + '/details')
+
 
 export function useAuth(){
     return useContext(AuthContext)
 }
-
 export function AuthProvider ({children}){
     const [currentUser, setCurrentUser] = useState()
     const [userData, setUserData] = useState()
@@ -23,18 +16,7 @@ export function AuthProvider ({children}){
   
 
    
-    // function signup( name, artiste,email, password) {
-    //  return auth.createUserWithEmailAndPassword(email, password)
-    //   const setuser =set(ref (db, 'users/' + currentUser + '/details'),{
-    //     name:name,
-    //     artiste:artiste
-    //   })
-        
-    //   return {
-    //     res,setuser
-    //   }
-
-    // }
+   
     function signup(email, password) {
       return auth.createUserWithEmailAndPassword(email, password).then(
         user => {
@@ -94,12 +76,7 @@ export function AuthProvider ({children}){
         imgUrl, title,genre,file,producer,writer,lyrics,date
       })
     }
-    // const displayData = ref(db, 'Users/' + currentUser.uid + '/details');
-    // onValue( displayData, (snapshot) => {
-    // const data = snapshot.val();
-    // setCurrentUser(currentUser.name, data);
-    // });
-
+   
   
     function login( email, password) {
         return auth.signInWithEmailAndPassword(email, password)

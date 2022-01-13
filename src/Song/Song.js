@@ -233,9 +233,11 @@ const Song = () => {
                             </div>
                         </li>
                     </ol>
-                    <button type='submit' className ='uploadsong-button'>
+                  <div className ='preview-button'>
+                  <button type='submit' >
                         Preview
                     </button>
+                  </div>
                     </form>
                
 

@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom"
 
 const Navbar = () => {
     const [error, setError] = useState("")
-    const { currentUser, logout, userData } = useAuth()
+    const {  logout, userData } = useAuth()
     const navigate = useNavigate();
 
     async function handleLogout() {
@@ -19,7 +19,7 @@ const Navbar = () => {
         setError("Failed to log out")
       }
     }
-  //  console.log(userData)
+
     return (
         <div className ="Navbar">
            <div className ='Logo'><i className ="soundcloud icon"/></div>
