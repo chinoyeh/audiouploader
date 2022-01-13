@@ -6,9 +6,9 @@ import { Link, useNavigate } from "react-router-dom"
 
 const Navbar = () => {
     const [error, setError] = useState("")
-    const { currentUser, logout } = useAuth()
+    const { currentUser, logout, userData } = useAuth()
     const navigate = useNavigate();
-  
+
     async function handleLogout() {
       setError("")
   
@@ -19,16 +19,17 @@ const Navbar = () => {
         setError("Failed to log out")
       }
     }
-
+  //  console.log(userData)
     return (
         <div className ="Navbar">
            <div className ='Logo'><i className ="soundcloud icon"/></div>
            <div className ='navlinks'>
            <ul>
                 <li style={{paddingTop:'0px'}}><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdSK_-PJfARbbUnpg7CH_qgALvjn5JungXtg&usqp=CAU'/></li>
-                <li><Link to ='/Profile'>Chinoyeh</Link></li>
+                <li><Link to ='/Profile'>{userData}</Link></li>
                 <li> <button variant="link" onClick={handleLogout}>Logout</button></li>
             </ul>
+     
            </div>
     
             </div>

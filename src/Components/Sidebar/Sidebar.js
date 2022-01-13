@@ -1,13 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext'
+
+
+
 import './Sidebar.css'
 const Sidebar = () => {
+    const {userData} = useAuth()
+
     return (
         <div className ="Sidebar">
         <div className = "Profile"><Link to ='/Profile'>
             <div className ='Profile-image'><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdSK_-PJfARbbUnpg7CH_qgALvjn5JungXtg&usqp=CAU'/> </div>
             </Link>
-            <h3>Chinoyeh</h3>
+            <h3>{userData}</h3>
             <h4>Ughelli </h4>
            </div>
         <div className = "Sidelinks">

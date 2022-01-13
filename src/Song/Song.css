@@ -37,7 +37,10 @@
 }
 .song-details {
   margin-top: 50px;
+  display: grid;
+  text-align: center;
 }
+
 .song-cover input {
   background-color: white;
   width: 200px;
@@ -47,7 +50,8 @@
 .song-cover input::file-selector-button {
   visibility: hidden;
 }
-.uploadsong-button button {
+
+.uploadsong-button {
   background-color: #807e7e;
   color: rgb(233, 230, 230);
   position: relative;
@@ -61,6 +65,7 @@
 
 .container {
   background-color: #807e7e;
+  color: white;
   border-radius: 10px;
   display: inline-block;
   position: relative;
@@ -115,3 +120,32 @@
   border-radius: 50%;
   background: white;
 } */
+.preview-content {
+  display: grid;
+  text-align: center;
+  margin-top: 50px;
+}
+.preview-content button {
+  background-color: blueviolet;
+  border-style: none;
+  width: 100px;
+  color: rgb(233, 230, 230);
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 50px;
+}
+.preview-button {
+  text-align: right;
+}
+.song-preview {
+  margin-top: 50px;
+  background-color: #5c5b5b;
+  display: grid;
+  padding: 30px;
+
+  width: 400px;
+  height: 200px;
+}
+.song-preview span {
+  margin-left: 20px;
+}

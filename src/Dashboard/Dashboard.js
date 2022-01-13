@@ -8,9 +8,11 @@ import 'reactochart/styles.css';
 
 
 const Dashboard = () => {
-
   
- 
+//   const {  currentUser, userData} = useAuth()
+
+// console.log(userData)
+
     return (
         <div className ='Dashboard'>
          <Navbar/>
@@ -62,10 +64,16 @@ const Dashboard = () => {
 
         <h4> Top Albums </h4>
         
-           
+        {/* <h4> {currentUser.email} </h4>
+       <h4>{currentUser.artiste} </h4>
+       <h4> {currentUser.gender} </h4>
+           <h4>{currentUser.uid}</h4> */}
+           {/* <h4>{userData}</h4> */}
+
+        
          </div>
          </div>
-    
+  
           
 
            
