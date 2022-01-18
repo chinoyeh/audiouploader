@@ -23,7 +23,7 @@ const Sidebar = () => {
                 <li> <Link to ='/Analytics'> Analytics</Link></li>
                 <li> <Link to ='/Profile'>Songs</Link></li>
                   <li><Link to ='/Song'>Upload Song</Link> </li>
-                  <li><Link to ='/Settings'>Upload Album</Link> </li>
+                  <li><Link to ='/Album'>Upload Album</Link> </li>
                 
                   
             </ul>

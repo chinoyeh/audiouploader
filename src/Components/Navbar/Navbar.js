@@ -23,6 +23,7 @@ const Navbar = () => {
     return (
         <div className ="Navbar">
            <div className ='Logo'><i className ="soundcloud icon"/></div>
+          <button className='sidebar-button'>X</button>
            <div className ='navlinks'>
            <ul>
                 <li style={{paddingTop:'0px'}}><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdSK_-PJfARbbUnpg7CH_qgALvjn5JungXtg&usqp=CAU'/></li>

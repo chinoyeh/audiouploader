@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './Login/Login'
 import Signup from './Signup/Signup'
 import Dashboard from './Dashboard/Dashboard';
-import Album from './Album';
+import Album from './Album/Album';
 import Song from './Song/Song';
 import Wallet from './Wallet';
 import Profile from './Profile';

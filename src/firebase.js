@@ -1,9 +1,8 @@
 import firebase from "firebase/compat/app"
 import "firebase/compat/auth"
 import {getDatabase} from "firebase/database"
-import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import { getStorage } from "firebase/storage";
 
-// import 'firebase/compat/database'
 import 'firebase/compat/firestore'
 const app = firebase.initializeApp({
    
@@ -19,7 +18,7 @@ const app = firebase.initializeApp({
 })
 
 export const auth = app.auth()
-// export const db = app.database();
+
 export const db =getDatabase(app)
 
 export const storage = getStorage(app)

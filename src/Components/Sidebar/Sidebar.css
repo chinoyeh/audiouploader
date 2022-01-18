@@ -5,7 +5,7 @@
   overflow: auto;
 }
 .Profile {
-  background-color: #807e7e;
+  background-color: rgb(208, 33, 224);
   padding: 20px;
   text-align: center;
 }
@@ -35,4 +35,9 @@ h4 {
 }
 .Sidebar a:active {
   color: rgb(247, 165, 250);
+}
+@media screen and (max-width: 600px) {
+  .Sidebar {
+    visibility: hidden;
+  }
 }

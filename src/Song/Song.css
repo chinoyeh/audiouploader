@@ -8,7 +8,7 @@
   background-color: white;
   display: flex;
   flex-wrap: wrap;
-  height: 30px;
+  height: 50px;
   justify-content: space-evenly;
   align-items: center;
   counter-reset: myOrderedListItemsCounter;
@@ -22,6 +22,7 @@
 .navlink::before {
   background-color: black;
   border-radius: 50%;
+  padding: 5px;
   color: white;
 }
 .uploadsong-nav ol li:before {
@@ -140,6 +141,16 @@
 .preview-button {
   text-align: right;
 }
+.preview-button button {
+  background-color: blueviolet;
+  border-style: none;
+  width: 100px;
+  color: rgb(233, 230, 230);
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 50px;
+}
+
 .song-preview {
   background-color: #5c5b5b;
   display: grid;
@@ -155,4 +166,27 @@
   color: white;
   padding: 5px;
   outline: none;
+}
+@media screen and (max-width: 600px) {
+  .uploadsong-content {
+    margin: auto;
+    max-width: 400px;
+    color: white;
+  }
+  .song-form input {
+    background-color: #5c5b5b;
+    border-style: none;
+    width: 200px;
+    height: 30px;
+  }
+
+  .song-cover input {
+    background-color: white;
+    width: 150px;
+    height: 150px;
+    margin: auto 100px;
+  }
+  .song-cover input::file-selector-button {
+    visibility: hidden;
+  }
 }

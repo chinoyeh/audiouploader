@@ -4,6 +4,7 @@
 }
 .login p {
   color: gray;
+  font-weight: 500;
 }
 .login h1 {
   color: rgb(208, 33, 224);
@@ -26,6 +27,7 @@
   background-color: white;
   padding: 5px;
 }
+
 .login-form button {
   background-color: rgb(208, 33, 224);
   color: white;
@@ -43,4 +45,10 @@
 }
 .error {
   color: red;
+}
+@media screen and (max-width: 600px) {
+  .login {
+    max-width: 380px;
+    margin: auto;
+  }
 }

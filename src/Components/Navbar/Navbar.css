@@ -6,6 +6,9 @@
   justify-content: space-between;
   margin-bottom: 10px;
 }
+.sidebar-button {
+  visibility: hidden;
+}
 .Navbar img {
   width: 50px;
   height: 50px;
@@ -43,4 +46,18 @@
   font-size: 2.5rem;
   color: white;
   padding: 10px;
+}
+@media screen and (max-width: 600px) {
+  .navlinks a {
+    font-size: 1rem;
+  }
+  .navlinks button {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+  .sidebar-button {
+    visibility: initial;
+    background-color: rgb(208, 33, 224);
+    border-style: none;
+  }
 }
