@@ -44,8 +44,8 @@
 
 .song-cover input {
   background-color: white;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   margin: auto 100px;
 }
 .song-cover input::file-selector-button {
@@ -166,6 +166,12 @@
   color: white;
   padding: 5px;
   outline: none;
+}
+.song-file input::file-selector-button {
+  visibility: hidden;
+}
+.song-file input {
+  color: #5c5b5b;
 }
 @media screen and (max-width: 600px) {
   .uploadsong-content {

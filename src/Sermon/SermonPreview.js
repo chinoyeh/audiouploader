@@ -1,21 +1,17 @@
 import React, {useState} from 'react'
 import { useAuth } from '../contexts/AuthContext';
 import {  useNavigate } from 'react-router'
-import Navbar from '../Components/Navbar/Navbar'
-import Sidebar from '../Components/Sidebar/Sidebar'
-import './Song.css'
+import ChurchNav from '../Components/Navbar/ChurchNav'
+import ChurchSide from '../Components/Sidebar/ChurchSide'
+import './Semon.css'
 
 const Preview = () => {
-    const { uploadSong, songPreview} = useAuth()
-    var art = songPreview.image
-    var songTitle = songPreview.title
-    var file = songPreview.file
-    var producer = songPreview.producer
-    var writer = songPreview.writer
-    var lyrics = songPreview.lyrics
-    var otherArtiste = songPreview.otherArtiste
-    var date =songPreview.date
-    var fileName = songPreview.file.name
+    const {sermonPreview, uploadSermon} = useAuth()
+    const title = sermonPreview.title
+    const fileName = sermonPreview.file.name
+    const file = sermonPreview.file
+    const preacher = sermonPreview.preacher
+    const date = sermonPreview.date
     const navigate = useNavigate()
  
     const [error, setError] = useState ('')
@@ -23,11 +19,12 @@ const Preview = () => {
     function upload (e){
         e.preventDefault()
        
+        //  return
         try {
             setError('')
             setLoading (true)
-           uploadSong(art,songTitle,file,producer,writer, lyrics, otherArtiste,date )
-            navigate('/Song')
+            uploadSermon(title, file, preacher)
+            navigate('/ChurchDash')
           
           
         } catch (err){
@@ -41,8 +38,8 @@ const Preview = () => {
     
     return (
         <div className ='preview'>
-            <Navbar/>
-            <Sidebar/>
+            <ChurchNav/>
+            <ChurchSide/>
             <div className ='uploadsong-content'>
                 <div className ='uploadsong-nav'>
                     <ol>
@@ -52,19 +49,14 @@ const Preview = () => {
                     </ol>
                 </div>
              <div className ='preview-content'>
-             <div className ='song-cover'>
-                
-                {/* <img src= {songart} alt ='cover-art'/> */}
-                </div>
                 <div className ='song-preview'>
               
-                 <h4>Song Title:  <span>{songTitle}</span></h4>
-                    {/* <h4>Song Genre:  <span>{genre}</span></h4> */}
-                    <h4>File : <span>{fileName}</span></h4>
-                    <h4>Song Producer:  <span>{producer}</span></h4>
-                    <h4>Song Writer:  <span>{writer}</span></h4>
-                    <h4> Other Artiste:  <span>{otherArtiste}</span></h4>
-                    <h4>Date of Release:  <span>{date}</span></h4>
+                  <h4>Sermon Title:  <span>{title}</span></h4>
+             
+                    <h4> File Name:  <span>{fileName}</span></h4>
+                    <h4>Preacher:  <span>{preacher}</span></h4>
+                    {/* <h4> Date: <span>{date}</span></h4> */}
+               
          
 
                 </div>

@@ -7,12 +7,11 @@ import { Link, useNavigate } from "react-router-dom"
 const Navbar = () => {
     const [error, setError] = useState("")
     const [sidebar, setSidebar] = useState ('sidebar-hidden')
-    const {  logout, userData,logo, profilePhotos} = useAuth()
+    const {  logout, churchData, logo} = useAuth()
     const [loading, setLoading] = useState(true)
    
     const navigate = useNavigate();
-    const artiste = userData.artiste
-
+    // var churchName = churchData.churchName
     async function handleLogout() {
       setError("")
   
@@ -34,7 +33,7 @@ const Navbar = () => {
                <img src={logo} alt ='Logo'/>
                </Link>
                </div>
-          <button className='sidebar-button' onClick={()=> setSidebar((sidebar)=>(sidebar==='sidebar'?'sidebar-hidden':'sidebar'))}>X</button>
+          {/* <button className='sidebar-button' onClick={()=> setSidebar((sidebar)=>(sidebar==='sidebar'?'sidebar-hidden':'sidebar'))}>X</button>
             <div className={sidebar}>
             <div className = "nav-sidebar">
             <ul>
@@ -48,11 +47,11 @@ const Navbar = () => {
                   
             </ul>
         </div>
-            </div>
+            </div> */}
            <div className ='navlinks'>
            <ul>
-                <li style={{paddingTop:'0px'}}><img src ={profilePhotos} alt =''/></li>
-                <li><Link to ='/Profile'>{artiste}</Link></li>
+                <li style={{paddingTop:'0px'}}><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdSK_-PJfARbbUnpg7CH_qgALvjn5JungXtg&usqp=CAU'/></li>
+                {/* <li><Link to ='/Profile'>{churchName}</Link></li> */}
                 <li> <button variant="link" onClick={handleLogout}>Logout</button></li>
             </ul>
      

@@ -42,10 +42,17 @@
   font-weight: bold;
   letter-spacing: 2px;
 }
-.Logo {
-  font-size: 2.5rem;
+/* .Logo {
   color: white;
   padding: 10px;
+} */
+.Logo img {
+  border-style: none;
+  height: 55px;
+  padding: 5px;
+}
+.sidebar-hidden {
+  display: none;
 }
 @media screen and (max-width: 600px) {
   .navlinks a {
@@ -59,5 +66,28 @@
     visibility: initial;
     background-color: rgb(208, 33, 224);
     border-style: none;
+  }
+  .sidebar-hidden {
+    display: none;
+  }
+  .nav-sidebar {
+    background-color: #5c5b5b;
+    position: fixed;
+    left: 0;
+    top: 50px;
+    opacity: 0.8;
+  }
+
+  .nav-sidebar ul {
+    list-style: none;
+    line-height: 60px;
+  }
+  .nav-sidebar a {
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  .nav-sidebar a:active {
+    color: rgb(247, 165, 250);
   }
 }

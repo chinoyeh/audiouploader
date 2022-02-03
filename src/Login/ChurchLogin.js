@@ -19,7 +19,7 @@ const Login =()=> {
         setError("")
         setLoading(true)
         await login(emailRef.current.value, passwordRef.current.value)
-        navigate("/Dashboard")
+        navigate("/ChurchDash")
       } catch {
         setError("Failed to log in")
       }
@@ -37,7 +37,7 @@ const Login =()=> {
             <input type ='email' name ='email' placeholder ='Email' ref={emailRef}   />
             <input type ='password' name ='password' placeholder ='Password' ref={passwordRef} />
             <button  disabled={loading} >Login</button>
-            <p>Don't have an account?<Link to ='/Signup'> Register</Link></p>
+            <p>Don't have an account?<Link to ='/ChurchSignup'> Register</Link></p>
             <p>Forgot Password?</p>
         
             </form>

@@ -6,33 +6,38 @@ import Navbar from '../Components/Navbar/Navbar'
 import Sidebar from '../Components/Sidebar/Sidebar'
 
 const Song = () => {
-    const {uploadSongPreview, currentUser} = useAuth()
-    const artRef = useRef()
-    const titleRef = useRef()
-    const genreRef = useRef()
-    const fileRef = useRef()
-    const producerRef = useRef()
-    const writerRef = useRef()
-    const lyricsRef = useRef()
-    const dateRef = useRef()
+    const { uploadSongPreview} = useAuth()
+    const [art, setArt] = useState('')
+    const [title, setTitle] = useState ('')
+    const [genre, setGenre] = useState('')
+    const [file, setFile] = useState('')
+    const [producer, setProducer] = useState('')
+    const [writer, setWriter] = useState ('')
+    const [lyrics, setLyrics] = useState('')
+    const [otherArtiste, setOtherArtiste] = useState('')
+    const [date, setDate] = useState('')
+ 
     const navigate = useNavigate()
  
     const [error, setError] = useState ('')
     const [loading, setLoading] = useState (false)
     function handleSubmit (e){
         e.preventDefault()
-        //  console.log(currentUser)
-        //  return
+    
+
+
+      
         try {
             setError('')
             setLoading (true)
-           uploadSongPreview( currentUser.uid,artRef.current.value,titleRef.current.value,genreRef.current.value, fileRef.current.value,producerRef.current.value, writerRef.current.value, lyricsRef.current.value,dateRef.current.value)
-            navigate('/Preview')
+              uploadSongPreview( art, title,file, producer, writer, lyrics, otherArtiste, date)
           
+              navigate('/Preview')
+               
           
         } catch (err){
             console.log(err)
-            setError('Failed to create an account')
+            setError('Data not uploaded')
         
         }
         setLoading (false)
@@ -50,18 +55,22 @@ const Song = () => {
                     </ol>
                 </div>
                 <div className ='song-details'>
+                    <div className='error'>
+                           <p> {error} </p>
+                    </div>
                 <form className ='song-form' onSubmit ={handleSubmit}>
                     <ol>
                         <li>
                             <div className ='song-cover'>
                                 <h4>Select Cover Art</h4>
-                                <input type ='file' multiple accept ='image/*' ref={artRef}/>
+                                <input type ='file' onChange={(e)=>{setArt(e.target.files[0])}}/>
+                                
                             </div>
                         </li>
                         <li>
                             <div className ='song-form'>
                                 <h4>Enter Song Title</h4>
-                                <input type ='text'  ref={titleRef}/>
+                                <input type ='text'  value={title} onChange={(e)=>{setTitle(e.target.value)}}/>
                             </div>
                         </li>
                         <li>
@@ -70,96 +79,96 @@ const Song = () => {
                              
                                 <label htmlFor ='christianrock' className ='container'>Christain Rock
                                 <input type ='radio' id='christianrock' name ='genre'
-                                value ='christianrock'  ref={genreRef} />
+                                value ='christianrock'   />
                                 <span className="checkmark"></span>
                                 </label>
                                 
 
                                 <label  htmlFor ='spiritual'  className ='container'>Spiritual
                                 <input type ='radio' id='spiritual' name ='genre'
-                                value ='spiritual'  ref={genreRef}/>
+                                value ='spiritual'  />
                                 <span className="checkmark"></span>
                                 </label>
 
                                 
                                 <label htmlFor ='blackgospel' className ='container'>Black Gospel Music
                                 <input type ='radio' id='blackgospel' name ='genre'
-                                value ='blackgospel'  ref={genreRef}/>
+                                value ='blackgospel'  />
                                 <span className="checkmark"></span>
                                 </label>
                                 
                               
                                 <label htmlFor ='hymn' className ='container'>Hymn
                                 <input type ='radio' id='hymn' name ='genre'
-                                value ='hymn'  ref={genreRef}/>
+                                value ='hymn'  />
                                 <span className="checkmark"></span>
                                 </label>
                            
 
                                 <label htmlFor ='africanamerican' className ='container'>African American Music
                                 <input type ='radio' id='africanamerican'name ='genre'
-                                value ='africanamerican'  ref={genreRef}/>
+                                value ='africanamerican'  />
                                 <span className="checkmark"></span>
                                 </label>
 
                               
                                 <label htmlFor ='gospelreggae'  className ='container' >Gospel Reggae
                                 <input type ='radio' id='gospelreggae' name ='genre'
-                                value ='gospelreggae'  ref={genreRef}/>
+                                value ='gospelreggae'  />
                                 <span className="checkmark"></span>
                                 </label>
 
                                
                                 <label htmlFor ='acapella' className ='container'>Acapella
                                 <input type ='radio' id='acapella' name ='genre'
-                                value ='acapella'  ref={genreRef}/>
+                                value ='acapella'  />
                                 <span className="checkmark"></span>
                                 </label>
 
                              
                                 <label htmlFor ='nigeriangospel'  className ='container'>Nigerian Gospel
                                 <input type ='radio' id='nigeriangospel' name ='genre'
-                                value ='nigeriangospel'  ref={genreRef}/>
+                                value ='nigeriangospel'  />
                                 <span className="checkmark"></span>
                                 </label>
 
                                 <label htmlFor ='jesusmusic'  className ='container'>Jesus Music
                                 <input type ='radio' id='jesusmusic' name ='genre'
-                                value ='jesusmusic'  ref={genreRef}/>
+                                value ='jesusmusic'  />
                                 <span className="checkmark" ></span>
                                 </label>
 
                              
                                 <label htmlFor ='cac' className ='container'>Christain Adult Contemporary
                                 <input type ='radio' id='cac'name ='genre'
-                                value ='cac'  ref={genreRef}/>
+                                value ='cac'  />
                                 <span className="checkmark" ></span>
                                 </label>
 
                                 <label htmlFor ='traditionalgospel' className ='container'>Traditional Gospel
                                 <input type ='radio' id='traditionalgospel' name ='genre'
-                                value ='traditionalgospel'  ref={genreRef}/>
+                                value ='traditionalgospel'  />
                                 <span className="checkmark" ></span>
                                 </label>
 
                               
                                 <label htmlFor ='car' className ='container'>Christain Alternative Rock
                                 <input type ='radio' id='car'name ='genre'
-                                value ='car'  ref={genreRef}/>
+                                value ='car'  />
                                 <span className="checkmark" ></span>
                                 </label>
 
                               
                                 <label htmlFor ='gospelblues'  className ='container'>Gospel Blues
                                 <input type ='radio' id='gospelblues'name ='genre'
-                                value ='gospelblues'  ref={genreRef}/>
+                                value ='gospelblues'  />
                                 <span className="checkmark" ></span>
                                 </label>
 
                                 <label htmlFor ='christianhiphop' className ='container'>Christian Hip-Hop
                                  
                                 <input type ='radio' id='christianhiphop' name ='genre'
-                                value ='christianhiphop'  ref={genreRef}/>
+                                value ='christianhiphop'  />
                                 <span className="checkmark" ></span>
                                 </label>
 
@@ -167,27 +176,27 @@ const Song = () => {
                                 
                                 <label htmlFor ='cwm'  className ='container'>Contemporary Worship Muscic
                                 <input type ='radio' id='cwm' name ='genre'
-                                value ='cwm'  ref={genreRef}/>
+                                value ='cwm'  />
                                 <span className="checkmark" ></span>
                                 </label>
                                 
                               
                                 <label htmlFor ='ccm' className ='container'>Christain Country Music
                                 <input type ='radio' id='ccm' name ='genre'
-                                value ='ccm'  ref={genreRef}/>
+                                value ='ccm'  />
                                 <span className="checkmark"></span>
                                 </label>
 
                               
                                 <label htmlFor ='ucm'className ='container'>Urban Contemporary Music
                                 <input type ='radio' id='ucm' name ='genre'
-                                value ='ucm'  ref={genreRef}/>
+                                value ='ucm'  />
                                 <span className="checkmark"></span>
                                 </label>
 
                                 <label htmlFor ='tbg' className ='container'>Traditional Black Gospel
                                 <input type ='radio' id='tbg' name ='genre'
-                                value ='tbg'  ref={genreRef}/>
+                                value ='tbg'  />
                                 <span className="checkmark" ></span>
                                 </label>
 
@@ -197,39 +206,39 @@ const Song = () => {
                             </div>
                         </li>
                         <li>
-                        <div className ='song-form'>
+                        <div className ='song-file'>
                                 <h4>Select Song File</h4>
-                                <input type ='text'  ref={fileRef}/>
+                                <input type ='file'   onChange={(e)=>{setFile(e.target.files[0])}} />
                             </div>
                         </li>
                         <li>
                         <div className ='song-form'>
                                 <h4>Enter Song Producer</h4>
-                                <input type ='text'  ref={producerRef}/>
+                                <input type ='text'    value={producer} onChange={(e)=>{setProducer(e.target.value)}}/>
                             </div>
                         </li>
                         <li>
                         <div className ='song-form'>
                                 <h4>Enter Song Writer(s)</h4>
-                                <input type ='text' ref={writerRef}/>
+                                <input type ='text'   value={writer} onChange={(e)=>{setWriter(e.target.value)}}/>
                             </div>
                         </li>
                         <li>
                         <div className ='song-form'>
                                 <h4>Enter Song Lyrics</h4>
-                                <input type ='text'  ref={lyricsRef}/>
+                                <input type ='text'   value={lyrics} onChange={(e)=>{setLyrics(e.target.value)}}/>
                             </div>
                         </li>
                         <li>
                         <div className ='song-form'>
                                 <h4> Add Other Artiste</h4>
-                                <input type ='text'/>
+                                <input type ='text'  value={otherArtiste} onChange={(e)=>{setOtherArtiste(e.target.value)}}/>
                             </div>
                         </li>
                         <li>
                         <div className ='song-form'>
                                 <h4>Date of Release</h4>
-                                <input type ='text'  ref={dateRef}/>
+                                <input type ='text'   value={date} onChange={(e)=>{setDate(e.target.value)}}/>
                             </div>
                         </li>
                     </ol>

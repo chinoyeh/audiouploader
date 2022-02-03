@@ -1,0 +1,36 @@
+.Profile {
+  background-color: #444444;
+}
+.Profile-image {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 200px;
+  margin: auto;
+}
+.Profile-image img {
+  margin-top: 50px;
+  width: 150px;
+  height: 150px;
+}
+.Profile-image button {
+  border-style: none;
+  color: white;
+  background-color: #5c5b5b;
+  border-radius: 3px;
+  margin-top: 30px;
+  padding: 5px;
+  width: 130px;
+}
+.Profile-form {
+  max-width: 800px;
+  margin: auto;
+}
+.Profile-form input {
+  background-color: #5c5b5b;
+  border-style: none;
+  width: 650px;
+  height: 30px;
+  margin: 10px;
+  color: white;
+  padding: 10px;
+}

@@ -1,0 +1,65 @@
+.Sermon-content {
+  margin-left: 270px;
+  max-width: 600px;
+  color: white;
+}
+
+.Sermon-nav ol {
+  margin-top: 50px;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  height: 50px;
+  justify-content: space-evenly;
+  align-items: center;
+  counter-reset: myOrderedListItemsCounter;
+}
+.Sermon-nav li {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #807e7e;
+  list-style-type: none;
+}
+.navlink::before {
+  background-color: black;
+  border-radius: 50%;
+  padding: 5px;
+  color: white;
+}
+.Sermon-nav ol li:before {
+  counter-increment: myOrderedListItemsCounter;
+  content: counter(myOrderedListItemsCounter) "";
+  margin-right: 0.5em;
+}
+
+.sermon-details {
+  margin-top: 100px;
+  display: grid;
+  text-align: center;
+}
+.sermon-form input {
+  background-color: #5c5b5b;
+  margin: 10px;
+  border-style: none;
+  width: 500px;
+  height: 30px;
+}
+
+.sermon-file input::file-selector-button {
+  visibility: hidden;
+}
+.sermon-file input {
+  color: #5c5b5b;
+}
+.sermon-button {
+  text-align: right;
+}
+.sermon-button button {
+  background-color: blueviolet;
+  border-style: none;
+  width: 100px;
+  color: rgb(233, 230, 230);
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 50px;
+}

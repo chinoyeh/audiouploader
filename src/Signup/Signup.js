@@ -4,10 +4,12 @@ import { useAuth } from "../contexts/AuthContext"
 import '../Login/Login.css'
 
 const Signup = () => {
-    const fullNameRef = useRef()
-    const artisteNameRef = useRef()
     const emailRef = useRef()
     const passwordRef = useRef()
+    const fullNameRef = useRef()
+    const artisteNameRef = useRef()
+    const genderRef = useRef()
+    const phoneNumberRef = useRef()
     const {signup} = useAuth()
     const [error, setError] = useState ('')
     const [loading, setLoading] = useState (false)
@@ -17,9 +19,9 @@ const Signup = () => {
         try {
             setError('')
             setLoading (true)
-           await signup( emailRef.current.value,passwordRef.current.value)
+           await signup( emailRef.current.value,passwordRef.current.value,fullNameRef.current.value,artisteNameRef.current.value,genderRef.current.value, phoneNumberRef.current.value)
        
-           navigate("/User")
+           navigate("/Dashboard")
         } catch{
             setError('Failed to create an account')
         }
@@ -33,6 +35,10 @@ const Signup = () => {
             <p className ='error'> {error}</p>
             <form className ='login-form' onSubmit ={handleSubmit}>
             <input type ='email' name ='email' placeholder ='Email' ref ={emailRef}/>
+            <input type = 'text' name ='fullName' placeholder = 'Full Name' ref ={fullNameRef}/>  
+            <input type = 'text' name ='artisteName' placeholder = 'Artiste Name' ref ={artisteNameRef}/>   
+            <input type ='text' name ='gender' placeholder ='Gender' ref ={genderRef}/>
+            <input type ='number' name ='phoneNumber' placeholder ='Phone Number' ref ={phoneNumberRef}/>
             <input type ='password' name ='password' placeholder ='Password' ref ={passwordRef}/>
             <p> By signing up you agree with our Terms and Conditions </p>
           
