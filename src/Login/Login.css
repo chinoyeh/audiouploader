@@ -27,7 +27,12 @@
   background-color: white;
   padding: 5px;
 }
-
+.login-form img {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+}
 .login-form button {
   background-color: rgb(208, 33, 224);
   color: white;

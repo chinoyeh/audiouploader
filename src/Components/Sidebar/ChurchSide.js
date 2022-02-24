@@ -7,15 +7,17 @@ import { useAuth } from '../../contexts/AuthContext'
 import './Sidebar.css'
 const Sidebar = () => {
     const {churchData} = useAuth()
-    console.log(churchData)
-    // var churchName = churchData.churchName
+
+ 
+    var churchName = churchData?.churchName
+    console.log (churchName)
  
     return (
         <div className ="Sidebar">
         <div className = "SideProfile"><Link to ='/Profile'>
             <div className ='SideProfile-image'><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdSK_-PJfARbbUnpg7CH_qgALvjn5JungXtg&usqp=CAU'/> </div>
             </Link>
-            {/* <h3>{churchName}</h3> */}
+            <h3>{churchName}</h3>
             <h4>Ughelli </h4>
            </div>
         <div className = "Sidelinks">

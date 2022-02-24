@@ -10,17 +10,19 @@ const User = () => {
     const [details, setDetails] = useState('')
     const [pastorName, setPastorName] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
-    const {signupChurch} = useAuth()
+    const {signupChurch, profilePhotos} = useAuth()
+    const [profilePhoto, setProfilePhoto] = useState()
     const [error, setError] = useState ('')
     const [loading, setLoading] = useState (false)
     const navigate = useNavigate()
+   
     async function handleSubmit (e){
         e.preventDefault()
        
         try {
             setError('')
             setLoading (true)
-            await signupChurch (email, password, churchName, details, pastorName, phoneNumber)
+            await signupChurch (email, password,profilePhoto, churchName, details, pastorName, phoneNumber)
            navigate("/ChurchDash")
         } catch (err){
             console.log(err)
@@ -37,6 +39,11 @@ const User = () => {
             <p>Start your experience with us</p>
             <p className ='error'> {error}</p>
             <form className ='login-form'  onSubmit={handleSubmit} >
+            <img src ={profilePhotos} alt ='Profile Photo'/>
+            <input 
+            type = 'file'
+             onChange={(e)=>setProfilePhoto(e.target.files[0])
+             }/>
             <input
                 type = 'text' 
                 name ='churchName' 

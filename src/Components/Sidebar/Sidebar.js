@@ -7,7 +7,7 @@ import { useAuth } from '../../contexts/AuthContext'
 import './Sidebar.css'
 const Sidebar = () => {
     const {userData, profilePhotos} = useAuth()
-    var artiste = userData.artiste
+    var artiste = userData?.artiste
 
     return (
         <div className ="Sidebar">

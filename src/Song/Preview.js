@@ -6,7 +6,7 @@ import Sidebar from '../Components/Sidebar/Sidebar'
 import './Song.css'
 
 const Preview = () => {
-    const { uploadSong, songPreview} = useAuth()
+    const { uploadSong, songPreview, songArt} = useAuth()
     var art = songPreview.image
     var songTitle = songPreview.title
     var file = songPreview.file
@@ -54,7 +54,7 @@ const Preview = () => {
              <div className ='preview-content'>
              <div className ='song-cover'>
                 
-                {/* <img src= {songart} alt ='cover-art'/> */}
+                <img src= {songArt} alt ='cover-art'/>
                 </div>
                 <div className ='song-preview'>
               
